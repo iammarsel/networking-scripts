@@ -1,0 +1,26 @@
+---
+- name: ping all
+  hosts: all 
+  gather_facts: false
+  connection: local
+
+  vars:
+    cli:
+     username: wilcom
+     password: 0p3nsky+
+     timeout: 999999
+  tasks:
+    - name: ping all
+      ios_command:
+        provider: "{{ cli }}"
+        commands: 
+         - ping 10.52.6.255
+         - ping 10.52.10.255
+         - ping 10.52.30.255
+      register: output
+
+    - name: show output
+      debug:
+        var: output.stdout
+...
+
