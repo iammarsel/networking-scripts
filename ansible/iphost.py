@@ -16,9 +16,9 @@ print("IP-Mac-Host Information for Switches with Int Status!\n")
 
 ios_l2 = {
 	'device_type': 'cisco_ios',
-	'username':'wilcom',
+	'username':'',
 	'ip': '',
-	'password': '0p3nsky+',
+	'password': '',
 	'conn_timeout': 9999999
 }
 
