@@ -8,8 +8,8 @@
 
   vars:
     cli:
-     username: wilcom
-     password: 0p3nsky+
+     username: 
+     password: 
      timeout: 100
 
   tasks:
