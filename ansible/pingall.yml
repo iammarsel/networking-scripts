@@ -6,8 +6,8 @@
 
   vars:
     cli:
-     username: wilcom
-     password: 0p3nsky+
+     username: 
+     password: 
      timeout: 999999
   tasks:
     - name: ping all
