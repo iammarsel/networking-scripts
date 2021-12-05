@@ -1,3 +1,7 @@
+# Trunk Speed Monitoring for Cisco IOS which outputs to an Microsoft Excel File
+# fill in the correct username and password (lines 22 and 24)
+# enter the ip address (line 29)
+# create an 'excels' folder for output
 from netmiko import ConnectHandler
 import time
 from datetime import date
@@ -22,7 +26,7 @@ ios_l2 = {
 	'conn_timeout': 9999999
 }
 gap = 1
-ip = '10.30.100.189'
+ip = 'enter your ip here'
 trunks = list()
 runtime = int(input("How many minutes would you like to run Trunk Speed Monitoring for? "))
 ios_l2['ip'] = ip
