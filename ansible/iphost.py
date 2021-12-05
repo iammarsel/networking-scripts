@@ -1,3 +1,4 @@
+# IP-Mac-Host Information for Switches with Int Status
 from netmiko import ConnectHandler
 import xlwt as xw
 from datetime import date
