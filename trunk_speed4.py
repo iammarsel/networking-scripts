@@ -16,9 +16,9 @@ d1 = today_date.strftime("%m%d%y")
 d2 = today_date.strftime("%m/%d/%y")
 ios_l2 = {
 	'device_type': 'cisco_ios',
-	'username':'wilcom',
+	'username':'user1234',
 	'ip': '',
-	'password': '0p3nsky+',
+	'password': 'pAssW0rD',
 	'conn_timeout': 9999999
 }
 gap = 1
