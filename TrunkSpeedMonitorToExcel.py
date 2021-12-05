@@ -2,6 +2,7 @@
 # fill in the correct username and password (lines 22 and 24)
 # enter the ip address (line 29)
 # create an 'excels' folder for output
+
 from netmiko import ConnectHandler
 import time
 from datetime import date
