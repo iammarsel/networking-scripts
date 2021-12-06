@@ -1,6 +1,6 @@
 # Pinging through all ip ranges for hosts. 
 # enter username and password lines 24 and 26
-# edit the hosts folder for ips that need pinging
+# edit the hosts file for ips that need pinging
 # for loop going through full range of ips starting on line 57
 
 from netmiko import ConnectHandler
