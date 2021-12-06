@@ -1,6 +1,6 @@
 # Trunk Speed Monitoring for Cisco IOS which outputs to an Microsoft Excel File
-# fill in the correct username and password (lines 22 and 24)
-# enter the ip address (line 29)
+# fill in the correct username and password (lines 24 and 26)
+# enter the ip address (line 30)
 # create an 'excels' folder for output
 
 from netmiko import ConnectHandler
@@ -21,9 +21,9 @@ d1 = today_date.strftime("%m%d%y")
 d2 = today_date.strftime("%m/%d/%y")
 ios_l2 = {
 	'device_type': 'cisco_ios',
-	'username':'user1234',
+	'username':'',
 	'ip': '',
-	'password': 'pAssW0rD',
+	'password': '',
 	'conn_timeout': 9999999
 }
 gap = 1
