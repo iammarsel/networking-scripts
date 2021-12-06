@@ -1,4 +1,7 @@
 # IP-Mac-Host Information for Switches with Int Status
+# fill in the correct username and password (lines 22 and 24)
+# enter the ip needed in the hosts file
+
 from netmiko import ConnectHandler
 import xlwt as xw
 from datetime import date
@@ -33,7 +36,6 @@ for ip in sw.readlines():
 	print('...')
 	ios_l2['ip'] = ip
 	ssh = ConnectHandler(**ios_l2)
-
 	hostname = ssh.send_command("show run | s hostname")
 	hostname = hostname.split()
 	s1 = wb.add_sheet(hostname[1].upper())
@@ -50,19 +52,6 @@ for ip in sw.readlines():
 	s1.write(5,1,'MAC',boldr)
 	s1.write(5,2,'PORT',boldr)
 	s1.write(5,5,'INT STATUS', boldr)
-	# for i in range(1,255):
-	#	print("Pinging 10.52.6."+str(i)+" from "+ip)
-	#	pings6 = ssh.send_command("ping 10.52.6."+str(i)+" re 1 ti 1")
-	#	print("Pinging 10.52.7."+str(i)+" from "+ip)
-	#	pings7 = ssh.send_command("ping 10.52.7."+str(i)+" re 1 ti 1")
-	#	print("Pinging 10.52.10."+str(i)+" from "+ip)
-	#	pings10 = ssh.send_command("ping 10.52.10."+str(i)+" re 1 ti 1")
-	#	print("Pinging 10.52.20."+str(i)+" from "+ip)
-	#	ping20 = ssh.send_command("ping 10.52.20."+str(i)+" re 1 ti 1")
-	#	print("Pinging 10.52.30."+str(i)+" from "+ip)
-	#	pings30 = ssh.send_command("ping 10.52.30."+str(i)+" re 1 ti 1")
-	#	print("Pinging 10.52.100."+str(i)+" from "+ip)
-	#	pings100 = ssh.send_command("ping 10.52.100."+str(i)+" re 1 ti 1")
 	get_arp = ssh.send_command("show arp")
 	get_arp = get_arp.splitlines()
 	# split arp to get ips and mac addresses
@@ -72,7 +61,6 @@ for ip in sw.readlines():
 		if (get_arp[i][-1] != 'Vlan5') and (get_arp[i][-1] != 'ARPA'):
 			ips.append(get_arp[i][1])
 			macs.append(get_arp[i][3])
-
 	temp = 0
 	domain = ssh.send_command("show ip domain")
 	domain = domain.split('.')
