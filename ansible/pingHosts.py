@@ -1,3 +1,8 @@
+# Pinging through all ip ranges for hosts. 
+# enter username and password lines 24 and 26
+# edit the hosts folder for ips that need pinging
+# for loop going through full range of ips starting on line 57
+
 from netmiko import ConnectHandler
 import xlwt as xw
 from datetime import date
@@ -12,13 +17,13 @@ boldi = xw.easyxf('font: bold 1, height 200;' "borders: top medium, bottom mediu
 today_date = date.today()
 sw = open('hosts')
 
-print("IP-Mac-Host Information for Switches with Int Status!\n")
+print("Pinging through all ip ranges for hosts.\n")
 
 ios_l2 = {
 	'device_type': 'cisco_ios',
-	'username':'wilcom',
+	'username':'',
 	'ip': '',
-	'password': '0p3nsky+',
+	'password': '',
 	'conn_timeout': 9999999
 }
 
@@ -49,16 +54,16 @@ for ip in sw.readlines():
 	s1.write(5,1,'MAC',boldr)
 	s1.write(5,2,'PORT',boldr)
 	s1.write(5,5,'INT STATUS', boldr)
-	for i in range(1,255):
-		print("Pinging 10.52.6."+str(i)+" from "+ip)
-		pings6 = ssh.send_command("ping 10.52.6."+str(i))
-		print("Pinging 10.52.7."+str(i)+" from "+ip)
-		pings7 = ssh.send_command("ping 10.52.7."+str(i))
-		print("Pinging 10.52.10."+str(i)+" from "+ip)
-		pings10 = ssh.send_command("ping 10.52.10."+str(i))
-		print("Pinging 10.52.20."+str(i)+" from "+ip)
-		ping20 = ssh.send_command("ping 10.52.20."+str(i))
-		print("Pinging 10.52.30."+str(i)+" from "+ip)
-		pings30 = ssh.send_command("ping 10.52.30."+str(i))
-		print("Pinging 10.52.100."+str(i)+" from "+ip)
-		pings30 = ssh.send_command("ping 10.52.100."+str(i)
+	for i in range(1,255): # Edit the ip range needed for pinging
+		print("Pinging 10.##.#."+str(i)+" from "+ip)
+		pings6 = ssh.send_command("ping 10.##.#."+str(i))
+		print("Pinging 10.##.#."+str(i)+" from "+ip)
+		pings7 = ssh.send_command("ping 10.##.#."+str(i))
+		print("Pinging 10.##.##."+str(i)+" from "+ip)
+		pings10 = ssh.send_command("ping 10.##.##."+str(i))
+		print("Pinging 10.##.##."+str(i)+" from "+ip)
+		ping20 = ssh.send_command("ping 10.##.##."+str(i))
+		print("Pinging 10.##.##."+str(i)+" from "+ip)
+		pings30 = ssh.send_command("ping 10.##.##."+str(i))
+		print("Pinging 10.##.###."+str(i)+" from "+ip)
+		pings30 = ssh.send_command("ping 10.##.###."+str(i)
