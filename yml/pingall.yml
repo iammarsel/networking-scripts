@@ -6,17 +6,17 @@
 
   vars:
     cli:
-     username: wilcom
-     password: 0p3nsky+
+     username: user1234
+     password: paSSword
      timeout: 999999
   tasks:
     - name: ping all
       ios_command:
         provider: "{{ cli }}"
         commands: 
-         - ping 10.52.6.255
-         - ping 10.52.10.255
-         - ping 10.52.30.255
+         - ping 10.##.#.255
+         - ping 10.##.##.255
+         - ping 10.##.##.255
       register: output
 
     - name: show output
