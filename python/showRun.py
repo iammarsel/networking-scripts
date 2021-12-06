@@ -1,6 +1,10 @@
+# Getting the current configuration of a device using show run and outputting to a text file. 
+# enter username and password lines 11 and 13
+# edit the hosts file for ips that need pinging
+# should save a txt file in the output folder
+
 from netmiko import ConnectHandler
 from datetime import date
-
 
 ios_l2 = {
 	'device_type': 'cisco_ios',
@@ -20,6 +24,6 @@ for ip in sw.readlines():
 	hostname = hostname.split()
 	shrun = ssh.send_command("show run")
 	shrun = shrun.splitlines()
-	with open("camden/"+hostname[1]+"_"+d1+".txt","w") as f:
+	with open("output/"+hostname[1]+"_"+d1+".txt","w") as f:
 		f.write('\n'.join(shrun))
 	print("File saved as "+hostname[1]+"_"+d1+".txt"+" in the proper folder!")
