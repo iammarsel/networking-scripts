@@ -91,5 +91,5 @@ while runtime > 0:
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 s1.write(3,0,'Time Finished: '+ current_time,boldr)
-wb.save("excels/TrunkSpeed4"+d1+".xls")
+wb.save("excels/TrunkSpeed"+d1+".xls")
 print("Spreadsheet file is saved as TrunkSpeed"+d1+'.xls in the excels folder.')
