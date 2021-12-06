@@ -4,9 +4,9 @@ from datetime import date
 
 ios_l2 = {
 	'device_type': 'cisco_ios',
-	'username':'wilcom',
+	'username':'',
 	'ip': '',
-	'password': '0p3nsky+',
+	'password': '',
 	'conn_timeout': 9999999
 }
 sw = open('hosts')
