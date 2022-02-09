@@ -1,4 +1,4 @@
-from netmiko import ConnectHander
+from netmiko import ConnectHandler
 from datetime import time
 
 sw = open('hosts')
