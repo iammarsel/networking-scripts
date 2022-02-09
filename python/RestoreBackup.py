@@ -19,6 +19,6 @@ for ip in sw.readlines():
   ios_l2['ip'] = ip
   ssh = ConnectHandler(**ios_l2)
   config_commands = ["copy tftp running-config ","172.16.18.238","Backup for "+ip, "Restore Backup"]
-	get_backup = ssh.send_config_set(config_commands)
-	wr = ssh.send_command("wr")
+  get_backup = ssh.send_config_set(config_commands)
+  wr = ssh.send_command("wr")
 
