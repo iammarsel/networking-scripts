@@ -1,9 +1,9 @@
-from netmiko import ConnectHander
+from netmiko import ConnectHandler
 from datetime import time
 
 sw = open('hosts')
 
-print("Automated Backup System!")
+print("Restore Backup System!")
 
 ios_l2 = {
 	'device_type': 'cisco_ios',
